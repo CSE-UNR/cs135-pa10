@@ -1,88 +1,56 @@
-# Final Group Project
+# Final Project
 
-## Goals
+## Project Goals
 The goal of this project is to:
-1.	Familiarize students with **coding collaboratively**
-2.	Familiarize students with **2D Arrays**
-3.	Provide students with continued practice using **everything!**
+1.	Familiarize students with **2D Arrays** as **Arrays of Strings**
+2.	Provide students with continued practice using **everything else!**
    
 ## Important Notes
-1.	**Formatting**: Make sure that you follow the precise recommendations for the output content and formatting. For your testing purposes, the autograder will be compiling your code.
-2.	**Comments**: Header comments are required on all files, points will be deducted if no header comments are included.
-
-## Submission
-If you are using git from the command line, you can follow these steps:
-1.	Copy the clone URL from the green button above.
-2.	Type `git clone <your URL>` into the terminal window.
-3.	`cd` into your new assignment directory.
-4.	Save your `images.c` file to this directory and write your program.
-5.	When you’re ready, type the following commands: 
-```
-git add .
-git commit -m “your commit message”
-git push
-```
-
-## Academic Honesty
-Academic dishonesty is against university as well as the system community standards. Academic dishonesty includes, but is not limited to, the following:
-Plagiarism: defined as submitting the language, ideas, thoughts or work of another as one's own; or assisting in the act of plagiarism by allowing one's work to be used in this fashion.
-Cheating: defined as (1) obtaining or providing unauthorized information during an examination through verbal, visual or unauthorized use of books, notes, text and other materials; (2) obtaining or providing information concerning all or part of an examination prior to that examination; (3) taking an examination for another student, or arranging for another person to take an exam in one's place; (4) altering or changing test answers after submittal for grading, grades after grades have been awarded, or other academic records once these are official.
-Cheating, plagiarism or otherwise obtaining grades under false pretenses constitute academic dishonesty according to the code of this university. Academic dishonesty will not be tolerated and penalties can include cancelling a student’s enrolment without a grade, giving an F for the course, or for the assignment. For more details, see the University of Nevada, Reno General Catalog.
+1.	**Filename**: Save your program as `wordup.c`
 
 # Program
-Erinstagram!
+Wordup! (just in case Wordle is trademarked)
 
 ## Background
-This project is loosely based on concepts associated with image processing https://www.simplilearn.com/image-processing-article
-
-Our image "size" will be the number of "pixels" and we'll be approximating "grayscale" images. The files will store numerical values which represent how "bright" that "pixel" is. The characters used to "render" or display the image will correspond to the brightness level (see the table below).
-
-![pixel_values](https://github.com/CSE-UNR/cs135-pa9/assets/2504089/3d4bc578-3b35-437f-80f4-e4ffcf3dee21)
+This project is loosely based on the game Wordle: https://en.wikipedia.org/wiki/Wordle.
 
 ## Behavior
-The user should be able to choose from a menu which must include the following options.
-- load a new image
-- display the current image
-- edit the current image
-- exit the program  
-
-If the user chooses to load an new image, the program should attempt to read the contents of an image of any "size" from a file name they provide.  
-
-The display option should be able to display the correct characters for an image of any "size".
-
-If the user chooses to edit the current image, they should be able to choose from another menu which must include the following options. The new version of the image should be displayed each time.
-- crop
-- dim
-- brighten
-
-The crop option provides the user with a way to specify which smaller section of the original image they would like to use to create an edited image.  
-
-The dim option creates an edited image where each pixel is one step "dimmer".  
-
-The brighten option creates an edited image where each pixel is one step "brighter".
-
-After completing one of the above editing options, the user should be prompted to save their edited image to a file. If they agree, they should be prompted for a file name. Once the edited image is saved, they should be returned to the original menu.
-
-The user can end the program from the original menu by choosing the exit option.
-
-### Extra Credit
-Add another option to the edit menu for rotating an image 90 degrees which creates an edited image where every pixel in the image has been moved to a new location to create the "rotation" effect. *Extra Credit tasks will not be considered for grading unless all other requirements have been met.*
+- The program should load a 5 letter word from the `word.txt` file.
+   - For simplicity-sake, you may assume the mystery word will not have duplicate letters.
+- The user should be prompted for their guess until they guess the mystery word or they've guessed 6 times, whichever comes first.
+   - The user should be prompted to re-enter their guess if it is not 5 letters long or if any non-letter characters are entered (but these invalid entries are not counted as "guesses").
+- All of the user's previous guesses should be displayed back to the user.
+   - Letters in the correct spot should be capitalized.
+   - Correct letters in the incorrect spot should be "pointed to" from the line below, using the `^` (above the `6` on your keyboard).
+      - Letters which have been correctly guessed should not be "pointed to" if they're elsewhere in the word; even though the mystery word cannot have duplicate letters, the user entries can.
+- Once the game has ended (because they user has won or run out of guesses), an appropriate message should be displayed.
 
 ## Hints
-- You can start testing your program on the file included in this repository, but your program should work on any file which follows the format described in the Backround section.
-   - This includes image files generated by the program itself.
-- I used files with a `.txt` extension to make it easy to open them with an editor.
-- **There is no endline on the last line of the file provided!**
+- In my program, the guess is converted to all lower-case before the program starts checking it, just in case the user enters any capital letters.
+- This repository already contains a file with a mystery word, but feel free to update it with a new word!
+- There is not a requirement for the File IO to be in the main; I put mine in its own function.
+- **Remember!** If a chunk of code starts to feel too compilicated because it's doing too much, you may need to split it up into functions!
 
 ## Requirements
 - **You may *NOT* use any libraries other than `stdio` and `stdbool`.**
-- There must be ***at least*** 6 functions, in addition to the main (my program had 8)
-- There must be ***at least*** one function which uses *explicit* **pass by address** (arrays are *implicitly* passed by address)
-- *Extra Credit tasks will not be considered for grading unless all other requirements have been met.*
+- There must be ***at least*** 6 functions, in addition to the main (my program had 10)
 
 ## Example Program Execution
 An example executable is provided in this repository.
 - You should be able to run it from your project folder in a Linux environment. 
 - If you encounter a “permission denied” error when attempting to run the executable, type  
-```chmod u+x imagesExecutable```  
+```chmod u+x wordupExecutable```  
 into the terminal and try running the executable again.
+
+# Extra Credit
+***Extra credit code will not be graded unless the required functionality described in the previous sections is complete.***
+   
+## Important Notes
+1.	**Filename**: Save your extra credit program in a different file called `wordup_ec.c`
+
+# Program
+Add one or more of the following features
+1. pick a random word from a file with multiple words
+2. handle words with duplicate letters
+3. keep the top 5 players and their scores in a file and allow the user to see a "scoreboard"
+   - the score is the number of guesses ("high score" is actually fewer guesses)
