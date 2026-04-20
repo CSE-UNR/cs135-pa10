@@ -1,18 +1,20 @@
-# Final Project
+# Project 10
 
 ## Project Goals
 The goal of this project is to:
-1.	Familiarize students with **2D Arrays** as **Arrays of Strings**
-2.	Provide students with continued practice using **everything else!**
+1.	familiarize students with **2D Arrays** as **Arrays of Strings**
+    - use the <a href="https://erinkeith.github.io/135/quick_guides/2d_arrays">2D Arrays Quick Guide</a> for short syntax reminders!
+2.	provide students with continued practice using **everything else!**
+    - use my <a href="https://erinkeith.github.io/cs135">website</a> for refreshers on previous topics!
    
 ## Important Notes
-1.	**Filename**: Save your program as `wordup.c`
+1.	**Filename**: Save your program as `twordle.c`
 
 # Program
-Wordup! (just in case Wordle is trademarked)
+Twordle! (just in case Wordle is trademarked)
 
 ## Background
-This project is loosely based on the game Wordle: https://en.wikipedia.org/wiki/Wordle.
+This project is loosely based on the game <a href="https://en.wikipedia.org/wiki/Wordle">Wordle</a>.
 
 ## Behavior
 - The program should load a 5 letter word from the `word.txt` file.
@@ -28,25 +30,24 @@ This project is loosely based on the game Wordle: https://en.wikipedia.org/wiki/
 ## Hints
 - In my program, the guess is converted to all lower-case before the program starts checking it, just in case the user enters any capital letters.
 - This repository already contains a file with a mystery word, but feel free to update it with a new word!
-- There is not a requirement for the File IO to be in the main; I put mine in its own function.
 - **Remember!** If a chunk of code starts to feel too compilicated because it's doing too much, you may need to split it up into functions!
 
 ## Requirements
+- Your program must have ***at least 6 functions***, in addition to the `main` function (my program had 10).
 - **You may *NOT* use any libraries other than `stdio` and `stdbool`.**
-- There must be ***at least*** 6 functions, in addition to the main (my program had 10)
+- There is not a requirement for the File IO to be in the main; I put mine in its own function.
 
 ## Example Program Execution
-An example executable is provided in this repository.
-- You should be able to run it from your project folder in a Linux environment. 
-- If you encounter a “permission denied” error when attempting to run the executable, type  
-```chmod u+x wordupExecutable```  
-into the terminal and try running the executable again.
+An example executable (program) is provided in this repository. You should be able to run it from your project folder after cloning the repository in your Linux environment, in the same way you would run an executable you create.
+- To **_run_** the example executable, use the ```./twordleExecutable``` command after changing directories into your repository folder.
+- If you encounter a **permission denied** error when attempting to run the executable, use the ```chmod u+x twordleExecutable``` command in the terminal before trying again (using the command above).
 
 # Extra Credit
 ***Extra credit code will not be graded unless the required functionality described in the previous sections is complete.***
    
 ## Important Notes
-1.	**Filename**: Save your extra credit program in a different file called `wordup_ec.c`
+1.	**Filename**: Save your extra credit program in a ***<ins>different file</ins>*** called `twordle_ec.c`
+2.	Submitted code will be graded for up to 25% extra points.
 
 # Program
 Add one or more of the following features
